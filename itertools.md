@@ -34,7 +34,8 @@ itertools.groupby(data, lambda n:n%2)
      (1, <itertools._grouper object at 0x10db406a0>)]
 ```
 A scarier quirk is that calling list() on the groupby object causes bad things to happen:
-> The returned group is itself an iterator that shares the underlying iterable with groupby(). Because the source is shared, when the groupby() object is advanced, the previous group is no longer visible.
+>The returned group is itself an iterator that shares the underlying iterable with groupby(). Because the source is shared, when the groupby() object is advanced, the previous group is no longer visible.
+
 list() implicitly advances the groupby()
 ```
 z = itertools.groupby(data, lambda n:n%2)
