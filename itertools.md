@@ -29,8 +29,9 @@ data = sorted(data, key=lambda n:n%2)
 # data: [2, 4, 1, 3]
 itertools.groupby(data, lambda n:n%2)
     <itertools.groupby object at 0x10d95ab88>
-        [(0, <itertools._grouper object at 0x10db40668>), 
-         (1, <itertools._grouper object at 0x10db406a0>)]
+    # with list():
+    [(0, <itertools._grouper object at 0x10db40668>), 
+     (1, <itertools._grouper object at 0x10db406a0>)]
 ```
 A scarier quirk is that calling list() on the groupby object causes bad things to happen:
 > The returned group is itself an iterator that shares the underlying iterable with groupby(). Because the source is shared, when the groupby() object is advanced, the previous group is no longer visible.
