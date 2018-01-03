@@ -8,7 +8,7 @@ Itertools is cool! It makes code easier to reason with (once you learn them).
 - Sort first, or you'll get duplicate groups
 - The groups share an iterable with the groupby(), so make sure to iterate in order. Calling list() on the groupby() result will break things.
 
-```
+```python3
 >>> data = [1,2,3,4]
 >>> itertools.groupby(data, lambda n:n%2)
 <itertools.groupby object at 0x10db46188>
