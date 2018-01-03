@@ -12,10 +12,12 @@ Itertools is cool! It makes code easier to reason with (once you learn them).
 data = [1,2,3,4]
 itertools.groupby(data, lambda n:n%2)
     <itertools.groupby object at 0x10db46188>
-        [(1, <itertools._grouper object at 0x10db405f8>), 
-         (0, <itertools._grouper object at 0x10db40630>), 
-         (1, <itertools._grouper object at 0x10db40668>), 
-         (0, <itertools._grouper object at 0x10db406a0>)]
+    # with list():
+    [(1, <itertools._grouper object at 0x10db405f8>), 
+     (0, <itertools._grouper object at 0x10db40630>), 
+     (1, <itertools._grouper object at 0x10db40668>), 
+     (0, <itertools._grouper object at 0x10db406a0>)]
+    # but don't actually call list() (see below)!
 ```
 Each of the sub-iterators contain the actual elements that fulfill the grouping.
 
@@ -24,8 +26,7 @@ The quirk you may have noticed: Groupby iterates the list and creates a new grou
 If you don't want this, make sure to sort the list first!
 ```python
 data = sorted(data, key=lambda n:n%2)
-data
-    [2, 4, 1, 3]
+# data: [2, 4, 1, 3]
 itertools.groupby(data, lambda n:n%2)
     <itertools.groupby object at 0x10d95ab88>
         [(0, <itertools._grouper object at 0x10db40668>), 
@@ -36,8 +37,7 @@ A scarier quirk is that calling list() on the groupby object causes bad things t
 list() implicitly advances the groupby()
 ```
 z = itertools.groupby(data, lambda n:n%2)
-z
-    <itertools.groupby object at 0x10d95ab88>
+# z: <itertools.groupby object at 0x10d95ab88>
 for i in z:
     for elem in i[1]:
         print(elem, end=' ')
@@ -46,8 +46,7 @@ for i in z:
 *BUT:*
 ```python
 z = list(itertools.groupby(data, lambda n:n%2))
-z
-    [(0, <itertools._grouper object at 0x10db405f8>), (1, <itertools._grouper object at 0x10db40668>)]
+# z: [(0, <itertools._grouper object at 0x10db405f8>), (1, <itertools._grouper object at 0x10db40668>)]
 for i in z:
   for elem in i[1]:
     print(elem, end=' ')
