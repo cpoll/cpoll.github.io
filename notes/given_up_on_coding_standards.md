@@ -1,0 +1,14 @@
+# Why I Have Given Up on Coding Standards
+[http://www.richardrodger.com/2012/11/03/why-i-have-given-up-on-coding-standards/#.Wkvv4LQ-fxt](http://www.richardrodger.com/2012/11/03/why-i-have-given-up-on-coding-standards/#.Wkvv4LQ-fxt)
+[https://news.ycombinator.com/item?id=4815647](https://news.ycombinator.com/item?id=4815647)
+- `Most developers don’t make noise. Those who make noise, get promoted. You got promoted. You imposed your brilliant ideas on others, certain of victory. You wrote a coding standards document, and you made it law.` This is supposed to be a criticism, but it almost sounds like advice. Make noise, fix stuff you make noise about, become a hero.
+- I don't agree with the message, though. 'Please go write some code instead' ignores the fact that people aren't equipped to write good, safe code just from first-principles. Good coding standards keep code safer and easier to understand. And consistency is important.
+- On the other hand, he makes a good point that too many standards and guidelines are like herding cats, and also encourages ducking responsibility, thinking less, and going with the pack mentality.
+- Coding standards might be a bit idealistic.
+- 'No silver bullet' is very true, but that doesn't mean it's not a net gain.
+- I don't agree with "The truly evil thing about coding standards is what they do to your heart, your team’s heart. They are a little message that you are not good enough. You cannot quite be trusted. Without adult supervision, you’ll mess up." That's ego-talk. No matter how good you are, you will make mistakes. The real important thing is to have a blame-free culture and a culture of fixing mistakes so they don't happen again.
+- When you have random people working on the *same* code together, not having a coding style is a near guarantee of utter chaos. - Michael T. Babcock in the comments
+- The counterargument is that code should be written for readability, because it's read many more times than it's written; code standards help people navigate the codebase faster, because it's consistent. (https://blogs.msdn.microsoft.com/oldnewthing/20070406-00/?p=27343, and a million others)
+- You'll always have some non-perfect developers (all of them) who can benefit from some guidelines
+- Not having consistent code slows you down, your 'muscle memory' stops working, your brain can't fill in the gaps as quickly if a for-loop is formatted differently from line to line. And you can insert semantics into your style (private/public/class/constant/etc). When you read a word you know, you recognize the entire word; if you don't know the word, you have to sound it out in your head, and that's slower. Code's the same.
+- Code standards can be bad, no argument there. I disagree with a lot of rules that I find draconic, but that's not a denunciation of standards, just that you need to be selective.
